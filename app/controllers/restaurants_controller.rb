@@ -64,6 +64,6 @@ before_action :authenticate_user!
 
     # Only allow a list of trusted parameters through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :description)
+      params.require(:restaurant).permit(:name, :address, :description, :image)
     end
 end
