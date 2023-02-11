@@ -1,0 +1,41 @@
+<div class="form-add-infomation">
+    <%= form_with(model: restaurant_food, local: true) do |form| %>
+  <% if restaurant_food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(restaurant_food.errors.count, "error") %> prohibited this restaurant_food from being saved:</h2>
+
+      <ul>
+        <% restaurant_food.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field ">
+    <%= form.label :restaurant_id, "レストラン" %>
+    <%= form.number_field :restaurant_id, class:"input-data-form" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name, "料理の名（Food Name）" %>
+    <%= form.text_field :name, class:"input-data-form" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "レビュー内容（Review Content）" %>
+    <%= form.text_area :description, class:"input-data-form" %>
+  </div>
+
+  <div class="field">
+     <%= form.label :image, "映像（Image）" %>
+     <%= form.file_field :image, class:"image-upload" %><br>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>

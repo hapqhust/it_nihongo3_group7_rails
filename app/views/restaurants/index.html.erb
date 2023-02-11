@@ -1,31 +1,44 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Restaurants</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.description %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<div class="show-list-restaurant">
+   <h1 class="text-center">Restaurants</h1>
+   <div class="create-restaurant-new d-flex justify-content-end">
+  
+      <%= link_to ' <i class="fa fa-plus-circle" aria-hidden="true"></i> New Restaurant'.html_safe, new_restaurant_path%>
+   </div>
+   <div class="list-restaurant row">
+      <% @restaurants.each do |restaurant| %>
+      <div class="col-6">
+         <div class="card mb-3 mt-2">
+            <div class="row">
+               <div class="col-md-5">
+                  <% if restaurant.image.attached? %>
+                  <%= image_tag restaurant.image, class:"image-restaurant"%>
+                  <% end %> 
+               </div>
+               <div class="col-md-7">
+                  <div class="card-body">
+                     <div class="name-restaurant mb-3">
+                        <div class="d-flex bd-highlight">
+                           <div class="w-100 bd-highlight restaurant"><%= restaurant.name %> Restaurant</div>
+                           <div class="flex-shrink-1 bd-highlight"><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_restaurant_path(restaurant) %>  </div>
+                        </div>
+                     </div>
+                     <div class="description">
+                        <p class="card-text"> Title:  <%= restaurant.description %></p>
+                        <p>Description: <%= restaurant.description2 %></p>
+                        <p> <i class="fa fa-map-pin" aria-hidden="true"></i> Location : <%= restaurant.address %></p> 
+                     </div>
+                     
+                     <p class="card-text btn-learn-more">
+                        <small class="text-muted float-end">
+                            <%= link_to 'Learn more', restaurant, class:"btn-more" %>
+                        </small>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <% end %>
+   </div>
+</div>
