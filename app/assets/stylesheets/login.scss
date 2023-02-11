@@ -1,0 +1,27 @@
+a{
+    text-decoration: none;
+}
+.form-log-in{
+     .remember-checkbox{
+         label{
+             margin-left: 20px;
+         }
+         input{
+            margin-top: 9px;
+         }
+     }
+     .forgot-password{
+        float:right;
+         margin-right: 85px;
+         font-size: 16px;
+         color:black;
+     }
+    
+     .hover-btn:hover{
+         background-color: black;
+         color: white;
+         padding: 5px;
+     }
+            
+}
+

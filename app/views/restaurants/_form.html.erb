@@ -1,32 +1,37 @@
-<%= form_with(model: restaurant, local: true) do |form| %>
-  <% if restaurant.errors.any? %>
-    <div id="error_explanation">
+<div class="form-add-infomation">
+   <%= form_with(model: restaurant, local: true) do |form| %>
+   <% if restaurant.errors.any? %>
+   <div id="error_explanation">
       <h2><%= pluralize(restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
-
       <ul>
-        <% restaurant.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+         <% restaurant.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
       </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+   </div>
+   <% end %>
+   <div class="field">
+      <%= form.label :name, "レストラン名（Name）" %>
+      <%= form.text_field :name, class:"input-data-restaurant" , class:"input-data-form" %>
+   </div>
+   <div class="field">
+      <%= form.label :address, "住所（Address）" %>
+      <%= form.text_field :address, class:"input-data-restaurant", class:"input-data-form"%>
+   </div>
+   <div class="field">
+      <%= form.label :description, "説明（Description）" %>
+      <%= form.text_field :description, class:"input-data-restaurant", class:"input-data-form"%>
+   </div>
+   <div class="field">
+      <%= form.label :description2, "レビュー内容（Review Content）" %>
+      <%= form.text_area :description2, class:"input-data-restaurant", class:"input-data-form"%>
+   </div>
+   <div class="field">
+      <%= form.label :image, "映像（Image）" %>
+      <%= form.file_field :image, class:"image-upload"%>
+   </div>
+   <div class="actions">
+      <%= form.submit %>
+   </div>
+   <% end %>
+</div>

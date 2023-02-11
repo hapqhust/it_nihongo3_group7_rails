@@ -1,3 +1,163 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form-restaurant{
+    i{
+       font-size: 18px;
+    }
+    a{
+        margin-top: 20px;
+        text-decoration: none;
+        font-size: 15px;
+        color: black;
+    }
+}
+
+
+.card{
+    border-radius: 20px;
+    border:1px solid gray;
+    .name-restaurant{
+        .restaurant{
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: -0.8px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        i{
+            line-height: 2.7;
+            font-size: 16px;
+        }
+        i:hover{
+            background-color: white;
+            color:black;
+            font-weight: 800;
+
+        }
+    }
+    .description{
+        p{
+            font-size: 15px;
+            letter-spacing: -0.4px;
+            font-family: serif;
+        }
+    }
+    .btn-learn-more{
+        margin-top: 40px;
+        .btn-more{
+            font-size: 16px;
+            padding: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            color: black;
+            background-color: blanchedalmond;
+           
+        }
+        .btn-more:hover{
+            background-color: cadetblue;
+            color:white;
+
+        }
+    }
+
+}
+.show-list-restaurant{
+    .list-restaurant{
+        .image-restaurant{
+            width: 100%;
+            height: 250px;
+            margin: 0 auto;
+            border-radius: 20px 0px 0px 20px;
+            border:1px solid black;
+        }
+
+    }
+    .create-restaurant-new{
+        margin-bottom: 10px;
+        a{
+            font-size: 16px;
+            background-color: black;
+            padding: 12px;
+            border-radius: 15px;
+            color: white;
+
+        }
+    }
+}
+.details-restaurant{
+    width: 100%;
+    .infor-details{
+        .infor-about-restaurant{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+    }
+    .image-restaurant{
+        width: 50%;
+        img{
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        text-align: center;
+        margin: 0 auto;
+    }
+
+
+    .list-comment-restaurant{
+        
+        .input-comment{
+            textarea{
+                width: 100%;
+                border-radius: 5px !important;
+                border:1px solid gray;
+                padding: 13px;
+                
+            }
+        }
+        .actions-comment{
+           
+            input{
+                border-radius: 5px;
+                border: 1px solid gray;
+                padding: 12px;
+                float:right;
+
+            }
+            
+        }
+        .show-list-comment{
+                margin-top: 100px;
+           
+                .image-comment{
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        margin: 0 auto;
+                    }
+                }
+                .card{
+                    border: none;
+                }
+            
+        }
+
+    }
+    tr{
+        th,td{
+            text-align: center;
+        }
+        td{
+            border:none;
+        }
+        
+    }
+    
+   
+}

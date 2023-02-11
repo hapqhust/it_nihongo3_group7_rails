@@ -1,5 +1,7 @@
-<h1>New Restaurant</h1>
+<div class="form-restaurant bg-light width-form">
+    <h1 class="title">新しいレストラン</h1>
 
-<%= render 'form', restaurant: @restaurant %>
+    <%= render 'form', restaurant: @restaurant %>
 
-<%= link_to 'Back', restaurants_path %>
+    <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i> Back'.html_safe, restaurants_path %>
+</div>

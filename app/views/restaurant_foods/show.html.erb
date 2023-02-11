@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @restaurant_food.restaurant_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant_food.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant_food.description %>
+</p>
+
+<p>
+   <% if @restaurant_food.image.attached? %>
+     <%= image_tag @restaurant_food.image %>
+   <% end %>
+ </p>
+ 
+<h2>Review</h2>
+<%= form_with(model: @restaurant_food_review, local: true) do |form| %>
+  <div class= "field">
+    <%= form.text_area :review %>
+    <%= form.hidden_field :restaurant_food_id, :value => @restaurant_food.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<h2>Review List</h2>
+<ul>
+  <% @restaurant_food.restaurant_food_review.each do |restaurant_food_review|%>
+   <li><%= restaurant_food_review.review %>
+     (<i><%= restaurant_food_review.user.name %></i>)</li>
+<% end %>
+</ul>
+
+
+
+<%= link_to 'Edit', edit_restaurant_food_path(@restaurant_food) %> |
+<%= link_to 'Back', restaurants_path %>
